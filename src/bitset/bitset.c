@@ -14,7 +14,7 @@ bitSet bitset_create(size_t capacity) {
 
   set.capacity = capacity;
   set.size = (size_t)((capacity + 63) / 64);                                            // Количество блоков
-  set.bits = (uint64_t*)(calloc(sizeof(uint64_t), set.size));
+  set.bits = (uint64_t*)(calloc(set.size, sizeof(uint64_t)));
 
   assert(set.bits != NULL);
 
